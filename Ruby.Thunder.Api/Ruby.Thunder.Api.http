@@ -1,0 +1,6 @@
+@Ruby.Thunder.Api_HostAddress = http://localhost:5075
+
+GET {{Ruby.Thunder.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

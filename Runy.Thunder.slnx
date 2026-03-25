@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Ruby.Thunder.Api/Ruby.Thunder.Api.csproj" />
+  <Project Path="Ruby.Thunder.Domain/Ruby.Thunder.Domain.csproj" />
+</Solution>
