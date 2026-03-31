@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ruby.Thunder.Domain\Ruby.Thunder.Domain.csproj" />
+    <ProjectReference Include="..\Ruby.Thunder.Data\Ruby.Thunder.Data.csproj" />
   </ItemGroup>
 
 </Project>
