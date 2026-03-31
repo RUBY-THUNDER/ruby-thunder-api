@@ -1,7 +1,7 @@
 ﻿using Ruby.Thunder.Domain.Catalog;
 using Microsoft.EntityFrameworkCore;
 
-namespace Jet.Piranha.Data
+namespace Ruby.Thunder.Data
 {
     public class StoreContext : DbContext
     {
