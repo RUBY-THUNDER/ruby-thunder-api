@@ -3,6 +3,7 @@ using System.Runtime.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using Ruby.Thunder.Domain.Catalog;
 using Ruby.Thunder.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ruby.Thunder.Api.Controllers
 {
@@ -36,7 +37,7 @@ namespace Ruby.Thunder.Api.Controllers
             {
                 return NotFound();
             }
-            return Ok();
+            return Ok(item);
         }
 
         [HttpPost]
@@ -64,15 +65,37 @@ namespace Ruby.Thunder.Api.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public IActionResult Put(int id, Item item)
+        public IActionResult PutItem(int id, [FromBody] Item item)
         {
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+
+            if (_db.Items.Find(id) == null)
+            {
+                return NotFound();
+            }
+
+            _db.Entry(item).State = EntityState.Modified;
+            _db.SaveChanges();
+
             return NoContent();
         }
 
         [HttpDelete("{id:int}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteItem(int id)
         {
-            return NoContent();
+            var item = _db.Items.Find(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _db.Items.Remove(item);
+            _db.SaveChanges();
+
+            return Ok();
         }
     }
     
