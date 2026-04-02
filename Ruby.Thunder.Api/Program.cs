@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite("Data Source = ../Registrat.sqlite",
-    b => b.MigrationsAssembly("Ruby.Thunder.Data"))
+    b => b.MigrationsAssembly("Ruby.Thunder.Api"))
     );
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
