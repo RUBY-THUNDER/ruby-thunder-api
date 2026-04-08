@@ -15,4 +15,8 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ruby.Thunder.Domain\Ruby.Thunder.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
