@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/Ruby.Thunder.Domain.Tests/Ruby.Thunder.Domain.Tests.csproj" />
+  </Folder>
   <Project Path="Ruby.Thunder.Api/Ruby.Thunder.Api.csproj" />
   <Project Path="Ruby.Thunder.Data/Ruby.Thunder.Data.csproj" />
   <Project Path="Ruby.Thunder.Domain/Ruby.Thunder.Domain.csproj" />
