@@ -10,10 +10,21 @@ builder.Services.AddDbContext<StoreContext>(options =>
     options.UseSqlite("Data Source = ../Registrat.sqlite",
     b => b.MigrationsAssembly("Ruby.Thunder.Api"))
     );
+builder.Services.AddCors(options => 
+{
+    options.AddDefaultPolicy(builder => 
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors();
 
 // 2. Map the URL routes to your Controllers
 app.MapControllers();
