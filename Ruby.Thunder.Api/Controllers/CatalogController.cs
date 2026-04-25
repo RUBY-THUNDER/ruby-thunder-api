@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Ruby.Thunder.Domain.Catalog;
 using Ruby.Thunder.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ruby.Thunder.Api.Controllers
 {
@@ -84,6 +85,7 @@ namespace Ruby.Thunder.Api.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize("delete:catalog")]
         public IActionResult DeleteItem(int id)
         {
             var item = _db.Items.Find(id);
